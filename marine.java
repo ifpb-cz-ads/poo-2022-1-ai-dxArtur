@@ -5,15 +5,15 @@ class Pirate{
     String nick;
     String akumanomi;
     String ocupation;
-    String tripulation;
+    Tripulation tripulation;
     boolean status;
     int reward;
 }
 
-class tripulation{
+class Tripulation{
     String name;
     String Captain;
-    String members[];
+    Pirates members[];
     String jobs[];
 }
 
