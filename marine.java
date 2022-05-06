@@ -13,7 +13,7 @@ class Pirate{
     String nick;
     String akumanomi;
     String ocupation;
-    String tripulation;
+    Tripulation tripulation;
     boolean status;
     int reward;
 }
@@ -21,7 +21,7 @@ class Pirate{
 class Tripulation{
     String name;
     String Captain;
-    String members[];
+    Pirates members[];
     String jobs[];
     String ship;
 }
