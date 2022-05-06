@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
-class peaple{
+class Peaple{
     String name;
     String akumanomi;
     String haki;
-    String 
 }
 // as classes Pirate e Sailor são classes abastratas de pessoas 
 
@@ -21,7 +20,7 @@ class Pirate{
 class Tripulation{
     String name;
     String Captain;
-    Pirates members[];
+    Pirate members[];
     String jobs[];
     String ship;
 }
@@ -43,12 +42,12 @@ public class marine{
         System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
     }
 
-    static void showPirate(){
-        System.out.println("Your full name is:");
-        System.out.println("know as:");
-        System.out.println("Your reward is:");
+    static void showPirate(Pirate pirate){
+        System.out.println("Your full name is:" + pirate.name);
+        System.out.println("know as:" + pirate.nick);
+        System.out.println("Your reward is:" + pirate.reward);
         System.out.println("===== more informations =====");
-        System.out.print(Tripulation.name);
+        System.out.print("Actually is: " + pirate.ocupation + "on board on: " + pirate.tripulation.ship);//tripulation.name
         
     }
     
@@ -66,10 +65,13 @@ public class marine{
         luffy.akumanomi = "Hito Hito no mi model God Sun";
         luffy.ocupation = "Captain";
         luffy.reward = 1500000000;
-        // como definir o objeto de uma classe, sendo o atributo de outra
-        luffy.tripulation = mugiwara.Tripulation.name;
+        luffy.tripulation = Pirate.tripulation.mugiwara;
+        //como definir a tripulação dele: luffy.tripulation
 
-        System.out.print(luffy.tripulation);
+        // como definir o objeto de uma classe, sendo o atributo de outra
+        //luffy.tripulation = Tripulation.name;
+
+        System.out.print("");
 
         Pirate sanji = new Pirate();
 
