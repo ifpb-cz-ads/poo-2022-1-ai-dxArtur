@@ -1,5 +1,13 @@
 import java.util.Scanner;
 
+class peaple{
+    String name;
+    String akumanomi;
+    String haki;
+    String 
+}
+// as classes Pirate e Sailor são classes abastratas de pessoas 
+
 class Pirate{
     String name;
     String nick;
@@ -10,11 +18,17 @@ class Pirate{
     int reward;
 }
 
-class tripulation{
+class Tripulation{
     String name;
     String Captain;
     String members[];
     String jobs[];
+    String ship;
+}
+
+class Akumanomi{
+    String name;
+    String type;
 }
 
 public class marine{
@@ -25,12 +39,16 @@ public class marine{
         String fullname= sc.nextLine();
     }
 
+    static void moveTripulation(){
+        System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
+    }
+
     static void showPirate(){
         System.out.println("Your full name is:");
         System.out.println("know as:");
         System.out.println("Your reward is:");
         System.out.println("===== more informations =====");
-        System.out.print(".");
+        System.out.print(Tripulation.name);
         
     }
     
@@ -48,6 +66,10 @@ public class marine{
         luffy.akumanomi = "Hito Hito no mi model God Sun";
         luffy.ocupation = "Captain";
         luffy.reward = 1500000000;
+        // como definir o objeto de uma classe, sendo o atributo de outra
+        luffy.tripulation = mugiwara.Tripulation.name;
+
+        System.out.print(luffy.tripulation);
 
         Pirate sanji = new Pirate();
 
@@ -58,7 +80,17 @@ public class marine{
         sanji.reward = 330000000;
 
 
+        Tripulation mugiwara = new Tripulation();
+
+        mugiwara.name = "Mugiwara Pirates";
+        mugiwara.ship = "Thousand Sunny";
+
+        // como passar uma instancia como o parametro
+        showPirate(luffy);
         capturePirate();
+
+
+        
 
     }
 }
