@@ -47,17 +47,23 @@ public class marine{
         System.out.println("know as:" + pirate.nick);
         System.out.println("Your reward is:" + pirate.reward);
         System.out.println("===== more informations =====");
-        System.out.print("Actually is: " + pirate.ocupation + "on board on: " + pirate.tripulation.ship);//tripulation.name
+        System.out.println("Actually is: " + pirate.ocupation + "on board on: " + pirate.tripulation.ship);
         
     }
     
-    static void capturePirate(){
+    static void capturePirate(Pirate pirate){
         System.out.println("The Notorius pirate");
     }
 
     public static void main(String[] args){
         //Create my first object
+        
+        Tripulation mugiwara = new Tripulation();
 
+        mugiwara.name = "Mugiwara Pirates";
+        mugiwara.ship = "Thousand Sunny";
+        
+        
         Pirate luffy = new Pirate();
 
         luffy.name = "Monkey D. Luffy";
@@ -65,11 +71,9 @@ public class marine{
         luffy.akumanomi = "Hito Hito no mi model God Sun";
         luffy.ocupation = "Captain";
         luffy.reward = 1500000000;
-        luffy.tripulation = Pirate.tripulation.mugiwara;
-        //como definir a tripulação dele: luffy.tripulation
+        luffy.tripulation = mugiwara;
 
-        // como definir o objeto de uma classe, sendo o atributo de outra
-        //luffy.tripulation = Tripulation.name;
+        
 
         System.out.print("");
 
@@ -82,14 +86,9 @@ public class marine{
         sanji.reward = 330000000;
 
 
-        Tripulation mugiwara = new Tripulation();
-
-        mugiwara.name = "Mugiwara Pirates";
-        mugiwara.ship = "Thousand Sunny";
-
-        // como passar uma instancia como o parametro
+        
         showPirate(luffy);
-        capturePirate();
+        capturePirate(luffy);
 
 
         
