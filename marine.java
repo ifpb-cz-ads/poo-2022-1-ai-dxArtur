@@ -90,7 +90,9 @@ public class marine{
         showPirate(luffy);
         capturePirate(luffy);
 
-
+        //Scanner input = new Scanner(System.in);
+        //System.out.println("Escolha um de 1 a 7:");
+        //int num = input.nextInt();
         
 
     }
