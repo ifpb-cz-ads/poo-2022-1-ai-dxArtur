@@ -2,17 +2,18 @@ import java.util.Scanner;
 
 class Peaple{
     String name;
-    String akumanomi;
+    String nick
+    Akumanomi akumanomi;
     String haki;
 }
 // as classes Pirate e Sailor são classes abastratas de pessoas 
 
 
 
-class Pirate{
-    String name;
-    String nick;
-    String akumanomi;
+public class Pirate extends Peaple{
+    //String name;
+    //String nick;
+    //String akumanomi;
     String ocupation;
     Tripulation tripulation;
     boolean status;
@@ -22,14 +23,16 @@ class Pirate{
 class Tripulation{
     String name;
     String Captain;
-    Pirate members[];
-    String jobs[];
+    Pirate[] members;
+    String jobs["Captain", "Chief officer", "Cooker", "Navigator", "Pilot", "Sniper", "Musician", "Doctor", "Archaeologist", "Shipwright", "Crew Members"];
     String ship;
 }
 
 class Akumanomi{
-    String name;
+    Boolean status;
     String type;
+    String name;
+    
 }
 
 public class marine{
@@ -40,8 +43,11 @@ public class marine{
         String fullname= sc.nextLine();
     }
 
-    static void moveTripulation(Pirate pirate, Tripulation tripulation){
+    static void moveTripulation(Pirate pirate.nome, Tripulation tripulation){
+        pirate.Tripulation = Tripulation.tripulation;
+        //for
         System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
+        // como sobrescrever a tripulation que ele fazia parte
     }
 
     static void showPirate(Pirate pirate){
@@ -63,6 +69,12 @@ public class marine{
             System.out.println("The Pirate " + pirate.nick + " is already captured");
         }
 
+    }
+    
+    static void createTripulation(String tripulation){
+        Tripulation.name = tripulation; // como definir como atributo, o argumento passado pelo user
+        //queria que o captain da tripulation fosse um objeto do tipo pirate.
+        
     }
 
     public static void main(String[] args){
