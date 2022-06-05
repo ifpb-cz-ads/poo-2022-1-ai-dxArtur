@@ -8,7 +8,7 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "@artur_",
+            "name": "localhost",
             "database": "MarineDataBase",
             "username": "root",
             "password": "0000"

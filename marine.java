@@ -2,18 +2,15 @@ import java.util.Scanner;
 
 class Peaple{
     String name;
-    String nick
-    Akumanomi akumanomi;
+    String nick;
+    String akumanomi;
     String haki;
 }
 // as classes Pirate e Sailor são classes abastratas de pessoas 
 
 
 
-public class Pirate extends Peaple{
-    //String name;
-    //String nick;
-    //String akumanomi;
+class Pirate extends Peaple{
     String ocupation;
     Tripulation tripulation;
     boolean status;
@@ -22,18 +19,18 @@ public class Pirate extends Peaple{
 
 class Tripulation{
     String name;
-    String Captain;
+    String[][] membersJobs;
     Pirate[] members;
-    String jobs["Captain", "Chief officer", "Cooker", "Navigator", "Pilot", "Sniper", "Musician", "Doctor", "Archaeologist", "Shipwright", "Crew Members"];
+    String[] jobs = {"Captain", "Chief officer", "Cooker", "Navigator", "Pilot", "Sniper", "Musician", "Doctor", "Archaeologist", "Shipwright", "Crew Members"};
     String ship;
 }
 
-class Akumanomi{
-    Boolean status;
-    String type;
-    String name;
+//class Akumanomi{
+    //Boolean status;
+    //String type;
+    //String name;
     
-}
+//}
 
 public class marine{
 
@@ -43,11 +40,9 @@ public class marine{
         String fullname= sc.nextLine();
     }
 
-    static void moveTripulation(Pirate pirate.nome, Tripulation tripulation){
-        pirate.Tripulation = Tripulation.tripulation;
+    static void moveTripulation(Pirate pirate, Tripulation tripulation){
         //for
         System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
-        // como sobrescrever a tripulation que ele fazia parte
     }
 
     static void showPirate(Pirate pirate){
@@ -72,18 +67,21 @@ public class marine{
     }
     
     static void createTripulation(String tripulation){
-        Tripulation.name = tripulation; // como definir como atributo, o argumento passado pelo user
-        //queria que o captain da tripulation fosse um objeto do tipo pirate.
+        
         
     }
 
     public static void main(String[] args){
-        //Create my first object
+        
         
         Tripulation mugiwara = new Tripulation();
 
         mugiwara.name = "Mugiwara Pirates";
         mugiwara.ship = "Thousand Sunny";
+        
+
+        
+
         
         
         Pirate luffy = new Pirate();
@@ -95,7 +93,12 @@ public class marine{
         luffy.reward = 1500000000;
         luffy.tripulation = mugiwara;
 
+
         
+        //for (int i = 0; i<= Tripulation.jobs; i++){
+          //  System.out.println(mugiwara.jobs[i]);
+        //}
+
 
         System.out.print("");
 
@@ -112,7 +115,7 @@ public class marine{
         
         showPirate(luffy);
         showPirate(sanji);
-        capturePirate(luffy);
+        //capturePirate(luffy);
 
         //Scanner input = new Scanner(System.in);
         //System.out.println("Escolha um de 1 a 7:");
