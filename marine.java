@@ -5,7 +5,7 @@ abstract class Peaple{
     String akumanomi;
     String haki;
 }
-// as classes Pirate e Sailor são classes abastratas de pessoas 
+// as classes Pirate e Sailor são classes abstratas de Peaple 
 
 class Pirate extends Peaple{
     //String name;
