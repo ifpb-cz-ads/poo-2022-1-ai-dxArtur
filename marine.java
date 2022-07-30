@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 abstract class Peaple{
     String name;
+    String nick;
     String akumanomi;
     String haki;
 }
 // as classes Pirate e Sailor são classes abstratas de Peaple 
 
+
+
 class Pirate extends Peaple{
-    //String name;
-    String nick;
-    //String akumanomi;
     String ocupation;
     Tripulation tripulation;
     boolean status;
@@ -24,16 +24,18 @@ class Sailor extends Peaple{
 
 class Tripulation{
     String name;
-    String Captain;
-    Pirate members[];
-    String jobs[];
+    String[][] membersJobs;
+    Pirate[] members;
+    String[] jobs = {"Captain", "Chief officer", "Cooker", "Navigator", "Pilot", "Sniper", "Musician", "Doctor", "Archaeologist", "Shipwright", "Crew Members"};
     String ship;
 }
 
-class Akumanomi{
-    String name;
-    String type;
-}
+//class Akumanomi{
+    //Boolean status;
+    //String type;
+    //String name;
+    
+//}
 
 public class marine{
 
@@ -43,21 +45,33 @@ public class marine{
         String fullname= sc.nextLine();
     }
 
-    static void moveTripulation(){
+    static void moveTripulation(Pirate pirate, Tripulation tripulation){
+        //for
         System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
     }
 
     static void showPirate(Pirate pirate){
-        System.out.println("Your full name is:" + pirate.name);
-        System.out.println("know as:" + pirate.nick);
-        System.out.println("Your reward is:" + pirate.reward);
+        System.out.println("Your full name is: " + pirate.name);
+        System.out.println("know as: " + pirate.nick);
+        System.out.println("Your reward is: " + pirate.reward);
+        System.out.println("");
         System.out.println("===== more informations =====");
         //System.out.print("Actually is: " + pirate.ocupation + "on board on: " + pirate.tripulation.ship);//tripulation.name
         
     }
     
-    static void capturePirate(){
-        System.out.println("The Notorius pirate");
+    static void capturePirate(Pirate pirate){
+        if(pirate.status != true){
+            System.out.println("The Notorius pirate " + pirate.nick + " was captured");
+        } else {
+            System.out.println("The Pirate " + pirate.nick + " is already captured");
+        }
+
+    }
+    
+    static void createTripulation(String tripulation){
+        
+        
     }
 
     public static void main(String[] args){
@@ -66,9 +80,8 @@ public class marine{
 
         mugiwara.name = "Mugiwara Pirates";
         mugiwara.ship = "Thousand Sunny";
-
         
-
+        
         Pirate luffy = new Pirate();
 
         luffy.name = "Monkey D. Luffy";
@@ -79,8 +92,6 @@ public class marine{
         //luffy.tripulation = mugiwara.name;
         //como definir a tripulação dele: luffy.tripulation
 
-        // como definir o objeto de uma classe, sendo o atributo de outra
-        //luffy.tripulation = Tripulation.name;
 
         System.out.print("");
 
@@ -90,6 +101,7 @@ public class marine{
         sanji.nick = "Black Leg Sanji";
         sanji.akumanomi = "no have";
         sanji.ocupation = "Cooker";
+        sanji.tripulation = mugiwara;
         sanji.reward = 330000000;
 
 
@@ -97,9 +109,12 @@ public class marine{
 
         // como passar uma instancia como o parametro
         showPirate(luffy);
-        capturePirate();
+        showPirate(sanji);
+        //capturePirate(luffy);
 
-
+        //Scanner input = new Scanner(System.in);
+        //System.out.println("Escolha um de 1 a 7:");
+        //int num = input.nextInt();
         
 
     }
