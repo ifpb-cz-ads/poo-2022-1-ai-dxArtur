@@ -1,20 +1,25 @@
 import java.util.Scanner;
 
-class Peaple{
+abstract class Peaple{
     String name;
     String akumanomi;
     String haki;
 }
 // as classes Pirate e Sailor são classes abastratas de pessoas 
 
-class Pirate{
-    String name;
+class Pirate extends Peaple{
+    //String name;
     String nick;
-    String akumanomi;
+    //String akumanomi;
     String ocupation;
     Tripulation tripulation;
     boolean status;
     int reward;
+}
+
+class Sailor extends Peaple{
+    String nick;
+    String ocupation;
 }
 
 class Tripulation{
@@ -47,7 +52,7 @@ public class marine{
         System.out.println("know as:" + pirate.nick);
         System.out.println("Your reward is:" + pirate.reward);
         System.out.println("===== more informations =====");
-        System.out.print("Actually is: " + pirate.ocupation + "on board on: " + pirate.tripulation.ship);//tripulation.name
+        //System.out.print("Actually is: " + pirate.ocupation + "on board on: " + pirate.tripulation.ship);//tripulation.name
         
     }
     
@@ -57,6 +62,12 @@ public class marine{
 
     public static void main(String[] args){
         //Create my first object
+        Tripulation mugiwara = new Tripulation();
+
+        mugiwara.name = "Mugiwara Pirates";
+        mugiwara.ship = "Thousand Sunny";
+
+        
 
         Pirate luffy = new Pirate();
 
@@ -65,7 +76,7 @@ public class marine{
         luffy.akumanomi = "Hito Hito no mi model God Sun";
         luffy.ocupation = "Captain";
         luffy.reward = 1500000000;
-        luffy.tripulation = Pirate.tripulation.mugiwara;
+        //luffy.tripulation = mugiwara.name;
         //como definir a tripulação dele: luffy.tripulation
 
         // como definir o objeto de uma classe, sendo o atributo de outra
@@ -82,10 +93,7 @@ public class marine{
         sanji.reward = 330000000;
 
 
-        Tripulation mugiwara = new Tripulation();
-
-        mugiwara.name = "Mugiwara Pirates";
-        mugiwara.ship = "Thousand Sunny";
+        
 
         // como passar uma instancia como o parametro
         showPirate(luffy);
