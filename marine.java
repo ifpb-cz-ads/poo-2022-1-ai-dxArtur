@@ -1,25 +1,42 @@
 import java.util.Scanner;
 
-abstract class Peaple{
-    String name;
-    String nick;
-    String akumanomi;
-    String haki;
+public abstract class Peaple{
+    protected String name;
+    protected String nick;
+    protected String akumanomi;
+    protected String haki;
+
+    public Peaple(){
+    this.name = name;
+    this.nick = nick;
+    this.akumanomi = akumanomi;
+    this.haki = haki;
+    }
 }
 // as classes Pirate e Sailor são classes abstratas de Peaple 
 
 
 
 class Pirate extends Peaple{
-    String ocupation;
-    Tripulation tripulation;
-    boolean status;
-    int reward;
+    protected String ocupation;
+    protected Tripulation tripulation;
+    protected boolean status;
+    protected int reward;
+    
+    public Pirate(){
+    this.ocupation = ocupation;
+    this.status = status;
+    this.reward = reward;
+    //how to increament object Tripulation like a atributte for class Pirate
+    }
 }
 
 class Sailor extends Peaple{
-    String nick;
-    String ocupation;
+    protected String ocupation;
+    
+    public Sailor(){
+    this.ocupation = ocupation;
+    }
 }
 
 class Tripulation{
@@ -30,12 +47,7 @@ class Tripulation{
     String ship;
 }
 
-//class Akumanomi{
-    //Boolean status;
-    //String type;
-    //String name;
-    
-//}
+
 
 public class marine{
 
@@ -112,9 +124,7 @@ public class marine{
         showPirate(sanji);
         //capturePirate(luffy);
 
-        //Scanner input = new Scanner(System.in);
-        //System.out.println("Escolha um de 1 a 7:");
-        //int num = input.nextInt();
+ 
         
 
     }
