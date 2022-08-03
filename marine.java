@@ -12,6 +12,39 @@ public abstract class Peaple{
     this.akumanomi = akumanomi;
     this.haki = haki;
     }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public String getNick(){
+        return nick;
+    }
+    
+    public void setNick(String nick){
+        this.nick = nick;
+    }
+    
+    public String getAkumanomi(){
+        return akumanomi;
+    }
+    
+    public void setAkumanomi(String akumanomi){
+        this.akumanomi = akumanomi;
+    }
+    
+    public String getHaki(){
+        return haki;
+    }
+    
+    public void setHaki(String haki){
+        this.haki = haki;
+    }
+    
 }
 // as classes Pirate e Sailor são classes abstratas de Peaple 
 
