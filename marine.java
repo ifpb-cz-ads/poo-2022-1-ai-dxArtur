@@ -60,7 +60,8 @@ class Pirate extends Peaple{
     this.ocupation = ocupation;
     this.status = status;
     this.reward = reward;
-    //how to increament object Tripulation like a atributte for class Pirate
+    this.tripulation = tripulation;
+    // create other builder
     }
 }
 
@@ -134,7 +135,7 @@ public class marine{
         luffy.akumanomi = "Hito Hito no mi model God Sun";
         luffy.ocupation = "Captain";
         luffy.reward = 1500000000;
-        //luffy.tripulation = mugiwara.name;
+        luffy.tripulation.setName(mugiwara.name);
         //como definir a tripulação dele: luffy.tripulation
 
 
