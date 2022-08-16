@@ -114,7 +114,7 @@ class Pirate extends Peaple{
         this.ocupation = ocupation;
         this.status = status;
         this.reward = reward;
-        this.tripulation = tripulation;
+        //this.tripulation = tripulation;
     
     
     }
@@ -152,16 +152,8 @@ class Pirate extends Peaple{
         this.tripulation = tripulation;
     }
 
-    public String tripulationNull(){
-        return "No have tripulation";
-    }
 
     public Tripulation getTripulation(){
-        if(this.tripulation == null){
-            tripulationNull();
-        }else{
-            return this.tripulation;
-        }
         return this.tripulation;
     }
 
@@ -194,37 +186,51 @@ public class marine{
 
     
     static void moveTripulation(Pirate pirate, Tripulation tripulation){
-        //for
+        
         System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
     }
 
     static void showPirate(Pirate pirate){
+        System.out.println("The Pirate");
         System.out.println("Your full name is: " + pirate.getName());
         System.out.println("know as: " + pirate.getNick());
+        System.out.println(pirate.getStatus());
+        
         System.out.println("Your reward is: " + pirate.getReward());
         System.out.println("===== more informations =====");
-        //Pirate.tripulation = trpltn;
-        System.out.print("Actually is: " + pirate.getOcupation() + "on board on: " + pirate.tripulation.getShip());//tripulation.name
         
+        if (pirate.tripulation != null) {
+            System.out.println("Actually is: " + pirate.getOcupation() + "on board on: " + pirate.tripulation.getShip());//tripulation.name
+        }
+        else {
+            System.out.println("Actually no have tripulation");
+        }
+        System.out.println("=============================");
+
     }
 
     static void showSailor(Sailor sailor){
-
+        System.out.println("The Sailor");
+        System.out.println("Your full name is: " + sailor.getName());
+        System.out.println("know as: " + sailor.getNick());
+        System.out.println("Actually your ocupation is: " + sailor.getOcupation());
     }
     
     static void capturePirate(Pirate pirate){
-        if(pirate.status != true){
-            System.out.println("The Notorius pirate " + pirate.nick + " was captured");
-        } else {
-            System.out.println("The Pirate " + pirate.nick + " is already captured");
+        System.out.println(pirate.getStatus());
+        if(pirate.getStatus() == true){
+            System.out.println("The Notorius pirate " + pirate.getNick() + " was captured");
+            pirate.setStatus(false);
+        }else{
+            System.out.println("The Pirate " + pirate.getNick() + " is already captured");
+            //pirate.setStatus(false);
         }
-
+        System.out.println(pirate.getStatus());
     }
     
 
     public static void main(String[] args){
-        //Create my first object
-        //Pirate luffy = new Pirate("Monkey D. Luffy", "Mugiwara no Luffy", "H");
+    
 
         Pirate luffy = new Pirate();
 
@@ -234,6 +240,9 @@ public class marine{
         luffy.ocupation = "Captain";
         luffy.reward = 1500000000;
 
+        showPirate(luffy);
+        
+
         Pirate sanji = new Pirate();
 
         sanji.name = "Vinsmoke Sanji";
@@ -242,16 +251,33 @@ public class marine{
         sanji.ocupation = "Cooker";
         sanji.reward = 330000000;
 
+        showPirate(sanji);
+
+        Pirate eustass = new Pirate();
+        eustass.name = "Eustass Kid";
+        eustass.nick = "Captain Kid";
+        eustass.akumanomi = "jiki jiki no mi";
+        eustass.ocupation = "Captain";
+        eustass.reward = 470000000;
+        //eustass.status = false;
+
+
+
         Tripulation mugiwara = new Tripulation();
 
         mugiwara.name = "Mugiwara Pirates";
         Pirate[] members = {luffy, sanji};
         mugiwara.setMembers(members);
         mugiwara.ship = "Thousand Sunny";
- 
         
-        showPirate(luffy);
-        showPirate(sanji);
+        luffy.tripulation = mugiwara;
+        sanji.tripulation = mugiwara;
+        
+        //showPirate(luffy);
+        //showPirate(sanji);
+        showPirate(eustass);
+        capturePirate(luffy);
+        capturePirate(eustass);
 
  
         
