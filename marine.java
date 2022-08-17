@@ -313,6 +313,7 @@ public class marine{
         showPirate(luffy);
         showPirate(sanji);
         showPirate(eustass);
+	showSailor(aokiji);
         capturePirate(luffy);
         capturePirate(eustass);
 
