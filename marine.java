@@ -1,5 +1,6 @@
 import java.lang.reflect.Member;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 abstract class Peaple{
     protected String name;
@@ -15,6 +16,11 @@ abstract class Peaple{
     }
     
     public Peaple() {
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 
     public String getName(){
@@ -52,23 +58,27 @@ abstract class Peaple{
 }
 // as classes Pirate e Sailor são classes abstratas de Peaple 
 
+
 class Tripulation{
     protected String name;
-    protected Pirate[] members;
+    protected ArrayList<Pirate> members;
     //protected String[] jobs = {"Captain", "Chief officer", "Cooker", "Navigator", "Pilot", "Sniper", "Musician", "Doctor", "Archaeologist", "Shipwright", "Crew Members"};
     protected String ship;
+
+    
 
     public Tripulation(){
 
     }
 
-    public Tripulation(String name, Pirate[] members, String ship){
+    public Tripulation(String name, ArrayList<Pirate> members, String ship){
         this.name = name;
         this.members = members;
         //how to define like a atributte one array of objects
         this.ship = ship;
     }
 
+    
     
 
     public String getName(){
@@ -79,11 +89,11 @@ class Tripulation{
         this.name = name;
     }
 
-    public Pirate[] getMembers(){
+    public  ArrayList<Pirate> getMembers(){
         return this.members;
     }
     
-    public void setMembers(Pirate members[]){
+    public void setMembers(ArrayList<Pirate> members){
         this.members = members;
     }
 
@@ -104,9 +114,13 @@ class Pirate extends Peaple{
     protected boolean status;
     protected int reward;
     protected Tripulation tripulation;
+
+    //ArrayList<Pirate> members = new ArrayList<> ();
+
     
     public Pirate(){
         super();
+        this.status=true;
     }
 
     public Pirate(String name, String nick, String akumanomi, String haki, String ocupation, boolean status, int reward){
@@ -151,6 +165,8 @@ class Pirate extends Peaple{
         this.reward = reward;
         this.tripulation = tripulation;
     }
+
+    //ArrayList<Pirate> members = new ArrayList<> ();
 
 
     public Tripulation getTripulation(){
@@ -227,6 +243,20 @@ public class marine{
         }
         System.out.println(pirate.getStatus());
     }
+
+    static void showTripulation(Tripulation tripulation){
+        System.out.println("The crew");
+        System.out.println("The name is: " + tripulation.getName());
+        System.out.println("On board of the ship: " + tripulation.getShip());
+        System.out.println("Actually is composed by " + tripulation.getMembers().size() +" pirates");
+    }
+
+    static void showMembersTripulation(Tripulation tripulation){
+        System.out.println("The crew is made up of are: ");
+        for (int i=0; i<tripulation.getMembers().size(); i++){
+            System.out.println(tripulation.members.get(i));
+        }
+    }
     
 
     public static void main(String[] args){
@@ -259,25 +289,33 @@ public class marine{
         eustass.akumanomi = "jiki jiki no mi";
         eustass.ocupation = "Captain";
         eustass.reward = 470000000;
-        //eustass.status = false;
+        eustass.status = false;
 
 
 
         Tripulation mugiwara = new Tripulation();
 
         mugiwara.name = "Mugiwara Pirates";
-        Pirate[] members = {luffy, sanji};
-        mugiwara.setMembers(members);
+        //Pirate[] members = {luffy, sanji};
+        //mugiwara.setMembers(members);
         mugiwara.ship = "Thousand Sunny";
+
+        ArrayList<Pirate> members = new ArrayList<> ();
+        members.add(luffy);
+        members.add(sanji);
+        mugiwara.setMembers(members);
         
         luffy.tripulation = mugiwara;
         sanji.tripulation = mugiwara;
         
-        //showPirate(luffy);
-        //showPirate(sanji);
+        showPirate(luffy);
+        showPirate(sanji);
         showPirate(eustass);
         capturePirate(luffy);
         capturePirate(eustass);
+
+        showTripulation(mugiwara);
+        showMembersTripulation(mugiwara);
 
  
         
