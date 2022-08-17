@@ -1,4 +1,5 @@
 import java.lang.reflect.Member;
+import javax.swing.JOptionPane;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -62,7 +63,6 @@ abstract class Peaple{
 class Tripulation{
     protected String name;
     protected ArrayList<Pirate> members;
-    //protected String[] jobs = {"Captain", "Chief officer", "Cooker", "Navigator", "Pilot", "Sniper", "Musician", "Doctor", "Archaeologist", "Shipwright", "Crew Members"};
     protected String ship;
 
     
@@ -74,7 +74,6 @@ class Tripulation{
     public Tripulation(String name, ArrayList<Pirate> members, String ship){
         this.name = name;
         this.members = members;
-        //how to define like a atributte one array of objects
         this.ship = ship;
     }
 
@@ -115,7 +114,7 @@ class Pirate extends Peaple{
     protected int reward;
     protected Tripulation tripulation;
 
-    //ArrayList<Pirate> members = new ArrayList<> ();
+    
 
     
     public Pirate(){
@@ -166,7 +165,6 @@ class Pirate extends Peaple{
         this.tripulation = tripulation;
     }
 
-    //ArrayList<Pirate> members = new ArrayList<> ();
 
 
     public Tripulation getTripulation(){
@@ -239,7 +237,6 @@ public class marine{
             pirate.setStatus(false);
         }else{
             System.out.println("The Pirate " + pirate.getNick() + " is already captured");
-            //pirate.setStatus(false);
         }
         System.out.println(pirate.getStatus());
     }
@@ -317,6 +314,45 @@ public class marine{
         showTripulation(mugiwara);
         showMembersTripulation(mugiwara);
 
+        
+        /*
+        int option = 10;
+	    while (option != 0) {
+		
+		//MENU PRINCIPAL WITH OPTIONS
+		option = Integer.parseInt(JOptionPane.showInputDialog(""
+				+ "1: Show Pirate \n"
+				+ "2: Show Crew \n"
+				+ "3: Show Sailor \n"
+				+ "4: Show Crew Members \n"
+				+ "5: Capture Pirate \n"
+				+ "Choose your option! \n"
+				+ "Type 0 for esc"));
+		
+		//CASOS
+		switch (option) {
+		case 1: 
+            //
+			break;
+		case 2:
+			//
+			break;
+		case 3:
+			//
+			break;
+		case 4:
+			//
+			break;
+		case 5:
+			//
+			break;
+		default: System.out.println ("error");
+			break;
+		}
+		
+		
+	}
+*/
  
         
 
