@@ -208,8 +208,12 @@ public class marine{
         System.out.println("The Pirate");
         System.out.println("Your full name is: " + pirate.getName());
         System.out.println("know as: " + pirate.getNick());
-        System.out.println(pirate.getStatus());
-        
+        //System.out.println(pirate.getStatus());
+        if(pirate.getStatus()==true){
+            System.out.println("The pirate is free");
+        }else{
+            System.out.println("The pirate is trapped");
+        }
         System.out.println("Your reward is: " + pirate.getReward());
         System.out.println("===== more informations =====");
         
@@ -231,14 +235,14 @@ public class marine{
     }
     
     static void capturePirate(Pirate pirate){
-        System.out.println(pirate.getStatus());
+        //System.out.println(pirate.getStatus());
         if(pirate.getStatus() == true){
             System.out.println("The Notorius pirate " + pirate.getNick() + " was captured");
             pirate.setStatus(false);
         }else{
             System.out.println("The Pirate " + pirate.getNick() + " is already captured");
         }
-        System.out.println(pirate.getStatus());
+        //System.out.println(pirate.getStatus());
     }
 
     static void showTripulation(Tripulation tripulation){
