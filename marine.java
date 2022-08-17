@@ -199,11 +199,7 @@ class Sailor extends Peaple{
 public class marine{
 
     
-    static void moveTripulation(Pirate pirate, Tripulation tripulation){
-        
-        System.out.print("Now, the pirate of the tripulation is a ocupation on the board tripulation");
-    }
-
+    
     static void showPirate(Pirate pirate){
         System.out.println("The Pirate");
         System.out.println("Your full name is: " + pirate.getName());
@@ -272,6 +268,11 @@ public class marine{
         luffy.reward = 1500000000;
 
         showPirate(luffy);
+	
+	Sailor aokiji = new Sailor();
+	aokiji.name = "Aokiji kuzan";
+	aokiji.nick = "Aokiji";
+	aokiji.ocupation = "admiral";
         
 
         Pirate sanji = new Pirate();
